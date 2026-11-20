@@ -38,7 +38,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: #1
 }
 .brand-name { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; }
 .brand { align-items: center; gap: 10px; }
-.brand-logo { display: block; width: 30px; height: 30px; flex-shrink: 0; }
 .nav { display: flex; justify-content: flex-end; width: auto; margin: 0; gap: clamp(8px, 2vw, 25px); }
 .nav a { color: var(--muted); padding-inline: 6px; }
 .nav a:hover { background: #f2f2f2; color: var(--ink); }
@@ -98,9 +97,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: #1
 
 @media (max-width: 760px) {
   .sidebar { min-height: 70px; height: auto; padding-block: 14px; }
-  .brand { min-width: 0; max-width: calc(100% - 80px); gap: 7px; }
-  .brand-name { font-size: 12px; text-align: left; }
-  .brand-logo { width: 24px; height: 24px; }
+  .brand-name { font-size: 13px; }
   .mobile-toggle { color: var(--ink); border-color: #aaa; }
   .nav { display: none; top: 100%; background: #fff; padding: 8px 20px 16px; border-color: var(--line); box-shadow: 0 8px 16px #0001; }
   .hero { grid-template-columns: 1fr; min-height: 0; padding: 44px 0; gap: 32px; }
