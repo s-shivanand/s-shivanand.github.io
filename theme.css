@@ -294,7 +294,7 @@ body {
   box-shadow: 0 3px 16px #20335b0e;
 }
 .sidebar::after { content: none; }
-.nav { gap: 4px; background: transparent; }
+.nav { gap: 4px; background: transparent; flex-wrap: wrap; min-width: 0; }
 .nav a { padding: 8px 12px; border-radius: 20px; }
 .nav a[aria-current=page] { background: #edf3ff; }
 .hero, .page-intro, .intro-block, .credibility, .filter-bar,
@@ -328,6 +328,37 @@ body {
 }
 .project-preview-art svg { min-height: 0; }
 .project-preview-title { font-weight: 650; }
+.media-documentary { padding: clamp(22px, 3.5vw, 36px); border: 1px solid var(--line); border-radius: 13px; background: var(--panel); }
+.media-series-intro { max-width: 76ch; margin-bottom: 28px; }
+.media-series-intro .media-series-credit { margin: 0 0 10px; color: var(--accent); font-size: 14px; font-weight: 550; }
+.media-series-intro h2 { margin: 0 0 16px; color: var(--ink); font-size: clamp(23px, 2.8vw, 30px); line-height: 1.3; }
+.media-series-intro p { margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
+.media-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.media-episode { display: block; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); text-decoration: none; transition: border-color .18s, transform .18s; }
+.media-episode:hover { border-color: var(--accent); transform: translateY(-3px); }
+.media-thumbnail { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+.media-thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.media-play { position: absolute; inset: 0; display: grid; place-items: center; background: #0000000d; }
+.media-play svg { width: 52px; height: 39px; filter: drop-shadow(0 2px 6px #0004); }
+.media-episode-caption { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 5px 12px; padding: 17px 18px; }
+.media-episode-caption h3 { margin: 0; font-size: 20px; font-weight: 650; line-height: 1.4; }
+.media-episode-caption span { color: var(--muted); font-size: 14px; }
+.media-more { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.6; }
+.media-feature { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); align-items: center; gap: clamp(24px, 3.5vw, 38px); margin-top: 26px; padding: clamp(22px, 3.5vw, 36px); border: 1px solid var(--line); border-radius: 13px; background: var(--panel); }
+.media-feature-image { margin: 0; min-width: 0; }
+.media-feature-image img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.media-feature-image figcaption { margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.media-feature-credit { margin: 0 0 12px; color: var(--accent); font-size: 14px; }
+.media-feature-copy h2 { margin: 0 0 16px; color: var(--ink); font-size: clamp(23px, 2.6vw, 30px); line-height: 1.3; }
+.media-feature-copy > p:not(.media-feature-credit) { margin: 0 0 22px; color: var(--muted); font-size: 16px; line-height: 1.75; }
+@media (max-width: 850px) {
+  .media-grid { grid-template-columns: 1fr; gap: 20px; }
+  .media-feature { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .media-episode { transition: none; }
+  .media-episode:hover { transform: none; }
+}
 .research-topic:nth-child(n) { border-color: var(--line); }
 .research-grid { gap: 22px; align-items: stretch; }
 .research-topic:nth-child(n) {
@@ -377,6 +408,36 @@ body {
 .timeline-item::before { content: none; }
 .timeline-time { line-height: 1.6; }
 .timeline-item h2 { position: relative; }
+.timeline-entry-heading { display: grid; grid-template-columns: minmax(0, 1fr) 88px; align-items: start; gap: 16px; margin-bottom: 12px; }
+.timeline-entry-heading .timeline-role { margin-bottom: 0; }
+.journey-logo { position: relative; display: flex; align-items: center; justify-content: center; width: 88px; height: 42px; padding: 6px; overflow: hidden; border-radius: 5px; background: #fff; }
+.journey-logo img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+.journey-logo-dsr { background: #222; }
+.education-entry { display: grid; grid-template-columns: minmax(0, 1fr) 76px; align-items: start; gap: 12px; }
+.education-entry + .education-entry { margin-top: 20px; }
+.education-section h2 { margin-bottom: 22px; }
+.education-entry .journey-logo { width: 76px; height: 36px; padding: 5px; }
+.education-entry h3 { line-height: 1.5; }
+.education-entry p { margin: 4px 0 0; }
+.journey-logo.journey-logo-braunschweig,
+.education-entry .journey-logo-braunschweig { height: auto; aspect-ratio: 45 / 17; padding: 0; border-radius: 0; background: transparent; }
+.journey-logo-braunschweig img { width: 100%; height: auto; max-height: none; }
+.institution.institution-tight { min-height: 0; padding: 0; border: 0; background: transparent; }
+.institution.institution-tight img { width: auto; max-width: 100%; height: 58px; max-height: 58px; }
+.education-entry .journey-logo-ramaiah { width: 36px; height: 46px; padding: 0; background: transparent; justify-self: center; }
+/* Trim the supplied Weir image's broad white margins in the viewport, preserving the original asset. */
+.journey-logo-weir img { position: absolute; left: 50%; top: 50%; width: 124%; height: auto; max-width: none; max-height: none; transform: translate(-50%, -50%); }
+@media (max-width: 620px) {
+  .timeline-entry-heading { grid-template-columns: minmax(0, 1fr) 76px; gap: 12px; }
+  .journey-logo { width: 76px; height: 36px; padding: 5px; }
+}
+@media (max-width: 480px) {
+  .timeline-entry-heading { grid-template-columns: 1fr; gap: 10px; }
+  .journey-logo { width: 84px; height: 40px; }
+}
+.timeline-item .timeline-people { margin-top: 12px; font-size: 14px; line-height: 1.65; }
+.timeline-people span { color: var(--muted); }
+.timeline-people a { color: var(--accent); font-weight: 550; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .timeline-item h2::before {
   content: '';
   position: absolute;

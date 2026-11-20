@@ -37,6 +37,7 @@ html[data-theme="dark"] :is(.hero-lead, .hero-personal, .intro-layout p, .resear
 html[data-theme="dark"] .research-topic .topic-icon { background: #332b4b; color: var(--accent); }
 html[data-theme="dark"] .timeline-item h2::before { background: var(--panel); border-color: #ac99d9; }
 html[data-theme="dark"] .institution { background: #fff; border-color: #fff; }
+html[data-theme="dark"] .institution.institution-tight { background: transparent; border-color: transparent; }
 html[data-theme="dark"] .pill { background: #2a3345; border-color: #48536b; color: #d4dced; }
 
 html[data-theme="dark"] .button { background: #e7deff; border-color: #e7deff; color: #211a31; }
