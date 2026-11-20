@@ -53,6 +53,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: #1
   gap: clamp(30px, 6vw, 88px);
 }
 .hero h1 { font-size: clamp(43px, 6vw, 77px); }
+.hero .code-greeting {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: .83em;
+  font-weight: 500;
+  letter-spacing: -.045em;
+}
 .hero .eyebrow::before { display: none; }
 .hero .eyebrow { color: var(--accent); }
 .hero-lead { max-width: 620px; color: var(--muted); font-size: clamp(18px, 1.8vw, 23px); }
