@@ -1,0 +1,42 @@
+Website Template Attribution License
+Version 1.0
+
+Copyright (c) 2026 Sharana Shivanand
+
+Scope
+This license covers the original reusable website template: its HTML, CSS,
+visitor-facing JavaScript, layout, and original template graphics, to the
+extent that Sharana Shivanand holds copyright in those materials.
+
+Permission and attribution
+You may use, copy, modify, and redistribute the covered template, including
+for commercial websites, provided that:
+
+1. Copies and substantial portions of the template retain this license and
+   the copyright notice above.
+2. A website that uses or adapts this template includes a visible credit
+   linking to https://s-shivanand.github.io/, such as:
+   "Website template by Dr. Sharana Shivanand."
+   For a modified version, use:
+   "Adapted from a website template by Dr. Sharana Shivanand."
+3. Redistributed templates and adaptations identify Sharana Shivanand as
+   the original template creator and indicate whether changes were made.
+4. Attribution must not suggest endorsement of you, your website, or your
+   work by Sharana Shivanand.
+
+Excluded materials
+This license does not grant permission to reuse personal content, the CV,
+portraits or other photographs, publications, institutional and service
+logos, trademarks, documentary thumbnails, or other third-party materials.
+Those materials remain subject to their respective rights and permissions.
+Replace them with your own materials when adapting the template.
+The private source-generation scripts and local editor are not licensed
+for reuse by this notice. Any separately licensed dependencies retain
+their own licenses.
+
+Disclaimer
+THE TEMPLATE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, AND NONINFRINGEMENT. TO THE EXTENT PERMITTED BY APPLICABLE LAW,
+THE COPYRIGHT HOLDER IS NOT LIABLE FOR CLAIMS OR DAMAGES ARISING FROM THE
+TEMPLATE OR ITS USE.
