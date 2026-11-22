@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Sharana Shivanand: Coordinate S</title>
+  <title id="title">Sharana Shivanand: Neon sine wave</title>
+  <defs>
+    <path id="wave" d="M10 32C13.67 38.28 17.33 44 21 44S28.33 38.28 32 32 39.33 20 43 20 50.33 25.72 54 32"/>
+  </defs>
   <rect width="64" height="64" rx="10" fill="#11151f"/>
-  <path d="M5 19V5h14M45 59h14V45" fill="none" stroke="#b6a2ff" stroke-width="2" stroke-linecap="square"/>
-  <text x="32" y="47" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="500" fill="#b6a2ff">S</text>
+  <path d="M10 32H54" fill="none" stroke="#a7afc3" stroke-width="4"/>
+  <g fill="none" stroke-linecap="round">
+    <use href="#wave" stroke="#11151f" stroke-width="8.4"/>
+    <use href="#wave" stroke="#56ff83" stroke-width="5.6"/>
+  </g>
 </svg>

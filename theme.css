@@ -38,6 +38,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: #1
 }
 .brand-name { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; }
 .brand { align-items: center; gap: 10px; }
+.brand-logo { display: block; flex: none; }
 .nav { display: flex; justify-content: flex-end; width: auto; margin: 0; gap: clamp(8px, 2vw, 25px); }
 .nav a { color: var(--muted); padding-inline: 6px; }
 .nav a:hover { background: #f2f2f2; color: var(--ink); }
