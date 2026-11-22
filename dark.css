@@ -35,6 +35,7 @@ html[data-theme="dark"] :is(.hero, .page-intro) {
 }
 html[data-theme="dark"] :is(.hero-lead, .hero-personal, .intro-layout p, .research-topic p, .side-note p, .contact-aside p, .project-preview-summary, .project-context-note) { color: var(--muted); }
 html[data-theme="dark"] .research-topic .topic-icon { background: #332b4b; color: var(--accent); }
+html[data-theme="dark"] .research-topic .research-subtitle { color: #fff; }
 html[data-theme="dark"] .timeline-item h2::before { background: var(--panel); border-color: #ac99d9; }
 html[data-theme="dark"] .institution { background: #fff; border-color: #fff; }
 html[data-theme="dark"] .institution.institution-tight { background: transparent; border-color: transparent; }

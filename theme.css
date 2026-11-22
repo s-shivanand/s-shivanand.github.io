@@ -53,13 +53,24 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: #1
   gap: clamp(30px, 6vw, 88px);
 }
 .hero h1 { font-size: clamp(43px, 6vw, 77px); }
-.hero .code-greeting {
+.page-intro h1 { font-family: var(--display); font-weight: 600; }
+.hero .code-greeting,
+.research-topic .research-subtitle {
   font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
-  font-size: .83em;
   font-weight: 500;
   letter-spacing: -.045em;
 }
-.hero .eyebrow::before { display: none; }
+.hero .code-greeting { font-size: .83em; }
+@media (prefers-reduced-motion: no-preference) {
+  .greeting-character {
+    animation: reveal-greeting-character 1ms steps(1, end) var(--typing-delay) both;
+  }
+}
+@keyframes reveal-greeting-character {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.eyebrow::before { display: none; }
 .hero .eyebrow { color: var(--accent); }
 .hero-lead { max-width: 620px; color: var(--muted); font-size: clamp(18px, 1.8vw, 23px); }
 .hero-lead strong { color: var(--accent); font-weight: 650; }
@@ -236,6 +247,10 @@ html, body, .sidebar, .nav,
 }
 .project-preview-art svg { width: 100%; height: 100%; }
 .project-preview-title { font: 700 19px/1.3 var(--display); }
+.project-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: auto; padding-top: 4px; }
+.project-card-footer .project-preview-action { margin-top: 0; padding-top: 0; }
+.project-status { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: #56ff83; font: 600 12px/1.4 var(--display); letter-spacing: .06em; white-space: nowrap; }
+.project-status-dot { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: currentColor; }
 .project-preview-summary { color: var(--muted); font-size: 14px; }
 .project-preview-action { margin-top: auto; padding-top: 4px; color: var(--accent); font-size: 13px; font-weight: 650; }
 .project-dialog {
@@ -390,8 +405,7 @@ body {
   line-height: 1;
 }
 .research-topic h2 {
-  min-height: 2.6em;
-  margin: 0 0 14px;
+  margin: 0 0 6px;
   color: var(--accent);
   font-size: clamp(22px, 2.2vw, 25px);
   font-weight: 700;
@@ -399,6 +413,13 @@ body {
   letter-spacing: -.025em;
 }
 .research-topic p { margin: 0; color: #303039; font-size: 16px; line-height: 1.75; }
+.research-topic .research-subtitle {
+  margin: 0 0 20px;
+  color: #5840a0;
+  font-size: 16px;
+  letter-spacing: .025em;
+  line-height: 1.35;
+}
 .research-topic .research-topic-art {
   display: block;
   width: 100%;
@@ -406,9 +427,6 @@ body {
   flex-shrink: 0;
   margin: 0 0 20px;
   overflow: visible;
-}
-@media (max-width: 1000px) {
-  .research-topic h2 { min-height: 0; }
 }
 .timeline { padding-left: clamp(28px, 4vw, 48px); }
 .timeline-item::before { content: none; }

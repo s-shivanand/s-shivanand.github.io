@@ -69,5 +69,69 @@ document.querySelector('.copy-button')?.addEventListener('click', async (event) 
   }
 });
 
+function typeHomepageGreeting() {
+  const heading = document.querySelector('#hero-title');
+  if (!heading || window.self !== window.top ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const lines = [...heading.querySelectorAll('.code-greeting, .title-second')];
+  if (lines.length !== 2 || lines.some(line => line.childElementCount)) return;
+
+  try {
+    const greetingKey = 'portfolio:greeting-seen';
+    if (sessionStorage.getItem(greetingKey)) return;
+    sessionStorage.setItem(greetingKey, '1');
+  } catch {
+    // Keep the greeting static if the browser cannot remember this visit.
+    return;
+  }
+
+  const originalText = lines.map(line => line.textContent);
+  heading.setAttribute('aria-label', originalText.join(' '));
+  const segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter() : null;
+  let delay = 120;
+
+  for (const [index, line] of lines.entries()) {
+    const content = originalText[index];
+    const characters = segmenter
+      ? Array.from(segmenter.segment(content), part => part.segment)
+      : Array.from(content);
+    const fragment = document.createDocumentFragment();
+    for (const character of characters) {
+      const span = document.createElement('span');
+      span.className = 'greeting-character';
+      span.style.setProperty('--typing-delay', `${delay}ms`);
+      span.textContent = character;
+      fragment.append(span);
+      delay += 55;
+    }
+    line.setAttribute('aria-hidden', 'true');
+    line.replaceChildren(fragment);
+    delay += 250;
+  }
+
+  function showFullGreeting() {
+    clearTimeout(finishTimer);
+    window.removeEventListener('pagehide', showFullGreeting);
+    document.removeEventListener('visibilitychange', finishIfHidden);
+    heading.removeAttribute('aria-label');
+    lines.forEach((line, index) => {
+      line.textContent = originalText[index];
+      line.removeAttribute('aria-hidden');
+    });
+  }
+
+  function finishIfHidden() {
+    if (document.hidden) showFullGreeting();
+  }
+
+  const finishTimer = setTimeout(showFullGreeting, delay - 250);
+  window.addEventListener('pagehide', showFullGreeting);
+  document.addEventListener('visibilitychange', finishIfHidden);
+  finishIfHidden();
+}
+
+typeHomepageGreeting();
+
 // With JavaScript disabled the mobile navigation and every project remain visible.
 document.documentElement.classList.add('js');
